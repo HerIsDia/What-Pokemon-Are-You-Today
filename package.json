@@ -2,7 +2,7 @@
   "name": "what-pokemon-you-are-today",
   "version": "1.0.1",
   "description": "This little project have just a single utility: telling you what Pokemon you are today !",
-  "main": "index.html",
+  "main": "dist/index.html",
   "homepage": "https://wpayt.diams.app",
   "author": {
     "name": "DiamantDev",
@@ -11,7 +11,7 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel index.html --open",
-    "build": "parcel build index.html --out-dir dist"
+    "build": "parcel build index.html"
   },
   "dependencies": {
     "pokemon.js": "^1.1.8"
