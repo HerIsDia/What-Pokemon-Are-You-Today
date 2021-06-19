@@ -1,8 +1,14 @@
 {
   "name": "what-pokemon-you-are-today",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "This little project have just a single utility: telling you what Pokemon you are today !",
   "main": "index.html",
+  "homepage": "https://wpayt.diams.app",
+  "author": {
+    "name": "DiamantDev",
+    "url": "https://diamant.dev"
+  },
+  "license": "MIT",
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html"
