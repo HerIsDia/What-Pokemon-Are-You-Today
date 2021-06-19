@@ -16,6 +16,9 @@ pokemonJS.getAll().then((pokemon: [string]) => {
   localStorage.setItem('pokemon', rdmPoke);
   pokemonJS.getSprites(rdmPoke).then((url: any) => {
     const img = document.querySelector('img') as HTMLImageElement;
+    img.alt = rdmPoke;
     img.src = url.other['official-artwork'].front_default;
+    const icon = document.querySelector('.icon') as HTMLLinkElement;
+    icon.href = url.front_default;
   });
 });
