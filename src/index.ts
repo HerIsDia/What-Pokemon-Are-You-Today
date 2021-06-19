@@ -8,7 +8,7 @@ const difference = dateNow - lastDay >= 86400000;
 
 pokemonJS.getAll().then((pokemon: [string]) => {
   const rdmPoke = difference
-    ? pokemon[Math.random() * pokemon.length]
+    ? pokemon[Math.round(Math.random() * pokemon.length)]
     : (localStorage.getItem('pokemon') as string);
   const textToEdit = document.querySelector('#poke') as HTMLSpanElement;
   textToEdit.innerText = rdmPoke;
