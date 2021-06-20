@@ -1,0 +1,131 @@
+$black: #222222;
+$white: #eeeeee;
+
+body {
+  &.normal {
+    background-color: #eeeeee;
+    color: $black;
+    p a {
+      color: $black;
+    }
+  }
+  &.fighting {
+    background-color: #756573;
+    color: $white;
+    p a {
+      color: $white;
+    }
+  }
+  &.flying {
+    background-color: #657581;
+    color: $white;
+    p a {
+      color: $white;
+    }
+  }
+  &.poison {
+    background-color: #ad569f;
+    color: $black;
+    p a {
+      color: $black;
+    }
+  }
+  &.ground {
+    background-color: #9f8853;
+    color: $black;
+    p a {
+      color: $black;
+    }
+  }
+  &.rock {
+    background-color: #565f1d;
+    color: $white;
+    p a {
+      color: $white;
+    }
+  }
+  &.bug {
+    background-color: #417241;
+    color: $white;
+    p a {
+      color: $white;
+    }
+  }
+  &.ghost {
+    background-color: #3c55b8;
+    color: $white;
+    p a {
+      color: $white;
+    }
+  }
+  &.steel {
+    background-color: #dddcfe;
+    color: $black;
+    p a {
+      color: $black;
+    }
+  }
+  &.fire {
+    background-color: #c6761d;
+    color: $black;
+    p a {
+      color: $black;
+    }
+  }
+  &.water {
+    background-color: #184088;
+    color: $white;
+    p a {
+      color: $white;
+    }
+  }
+  &.grass {
+    background-color: #89ca5f;
+    color: $black;
+    p a {
+      color: $black;
+    }
+  }
+  &.electric {
+    background-color: #edf31d;
+    color: $black;
+    p a {
+      color: $black;
+    }
+  }
+  &.psychic {
+    background-color: #f2087e;
+    color: $black;
+    p a {
+      color: $black;
+    }
+  }
+  &.ice {
+    background-color: #8db0bb;
+    color: $black;
+    p a {
+      color: $black;
+    }
+  }
+  &.dragon {
+    background-color: #604324;
+    color: $white;
+    p a {
+      color: $white;
+    }
+  }
+  &.dark {
+    background-color: #042e2d;
+    color: $white;
+    p a {
+      color: $white;
+    }
+  }
+  &.fairy {
+    background-color: #f454b3;
+    color: $black;
+    p a {
+      color: $black;
+    }
+  }
+}

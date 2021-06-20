@@ -34,5 +34,10 @@ pokemonJS.getAll().then((pokemon: [string]) => {
     const tweetBtn = document.querySelector('#tweet') as HTMLLinkElement;
     tweetBtn.href = shareURL;
     tweetBtn.removeAttribute('hidden');
+    pokemonJS
+      .getType(rdmPoke)
+      .then((type: [{ logo: string; name: string }]) => {
+        document.body.classList.add('ready', type[0].name);
+      });
   });
 });
