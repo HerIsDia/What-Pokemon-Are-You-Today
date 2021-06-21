@@ -11,12 +11,14 @@ This little project have just a single utility: telling you what Pokemon you are
 
 This is all the ideas for the next big update.
 
-[ ] Add a System Leveling.
-[ ] Add an auto refresher and countdown.
-[ ] Add a reveal animation. (and option for activate or desactivate it.)
-[ ] Add an History.
-[ ] Add a shiny rate.
-[ ] French Translation.
+- [ ] Add a System Leveling.
+- [ ] Add an auto refresher and countdown.
+- [ ] Add a reveal animation. (and option for activate or desactivate it.)
+- [ ] Add an History.
+- [ ] Add a shiny rate.
+- [x] French Translation. (WIP - Still improvement to do)
+- [x] Better code.
+- [ ] PWA Support
 
 ## Authors
 
