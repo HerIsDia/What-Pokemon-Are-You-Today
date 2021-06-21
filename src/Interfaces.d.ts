@@ -228,7 +228,6 @@ export interface Spaces {
   pokedexNumbers: PokedexNumber[];
   shape: Color;
   varieties: Variety[];
-  sprites: Sprites;
 }
 
 export interface Color {

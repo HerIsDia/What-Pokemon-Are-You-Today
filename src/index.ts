@@ -1,5 +1,10 @@
 import { getData } from './getData';
-import { Spaces, Form } from './Interfaces';
+import { Color } from './Interfaces';
+
+interface Name {
+  language: Color;
+  name: string;
+}
 
 // Language checker
 const queryString = window.location.search;
@@ -27,11 +32,11 @@ const footer = document.querySelector('.footer') as HTMLParagraphElement;
 const img = document.querySelector('img') as HTMLImageElement;
 const icon = document.querySelector('.icon') as HTMLLinkElement;
 
-const language = (data: Spaces | Form) => {
+const language = (Names: Name[]) => {
   const matchName =
-    data.names.filter((lang) => lang.language.name == userLang)[0] != undefined
-      ? data.names.filter((lang) => lang.language.name == userLang)[0].name
-      : data.names[0].name;
+    Names.filter((lang) => lang.language.name == userLang)[0] != undefined
+      ? Names.filter((lang) => lang.language.name == userLang)[0].name
+      : Names[0].name;
   const language = {
     fr: {
       hello: `${
@@ -59,13 +64,11 @@ getData(difference, dataGet.pokemonID).then((data) => {
     date: difference ? dateNow : lastDay,
   };
   localStorage.setItem('data', JSON.stringify(send));
-  const languageText = language(data.PokeData);
+  const languageText = language(data.Names);
 
-  // img.alt = data.ID.toString();
-  // img.src =
-  //   (data.PokeData.sprites.other?.officialArtwork.frontDefault as string) ||
-  //   (data.PokeData.sprites['front_default'] as string);
-  // icon.href = data.PokeData.sprites['front_default'] as string;
+  img.alt = data.Name;
+  img.src = `https://img.pokemondb.net/sprites/home/normal/${data.Name}.png`;
+  icon.href = img.src;
 
   hello.innerHTML = languageText.hello;
   you.innerHTML = languageText.you;
