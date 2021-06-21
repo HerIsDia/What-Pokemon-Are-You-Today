@@ -1,4 +1,3 @@
-
 # What Pokemon Are You Today !
 
 This little project have just a single utility: telling you what Pokemon you are today !
@@ -8,12 +7,21 @@ This little project have just a single utility: telling you what Pokemon you are
 <a href="https://github.com/diamantdotdev/What-Pokemon-Are-You-Today/blob/master/LICENCE"><img alt="GitHub license" src="https://img.shields.io/github/license/diamantdotdev/What-Pokemon-Are-You-Today?style=flat-square"></a>
 <img alt="Website" src="https://img.shields.io/website?down_color=red&down_message=offline&style=flat-square&up_color=green&up_message=online&url=https%3A%2F%2Fwpayt.diams.app">
 
+## Beta branch
+
+This is all the ideas for the next big update.
+
+[ ] Add a System Leveling.
+[ ] Add an auto refresher and countdown.
+[ ] Add a reveal animation. (and option for activate or desactivate it.)
+[ ] Add an History.
+[ ] Add a shiny rate.
+[ ] French Translation.
 
 ## Authors
 
 - [@diamantdotdev](https://www.github.com/diamantdotdev)
 
-  
 ## Run Locally
 
 Clone the project
@@ -40,12 +48,9 @@ Start the server
   npm run start
 ```
 
-  
 ## Features
 
 - Telling what Pokemon are you today.
-- ***SMOOTH ANIMATION***
+- **_SMOOTH ANIMATION_**
 - Stored via `localstorage` (No online store)
 - Website background based on Pokemon first type.
-
-  
