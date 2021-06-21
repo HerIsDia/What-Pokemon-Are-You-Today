@@ -1,6 +1,8 @@
 import { getData } from './getData';
 import { Color } from './Interfaces';
 
+const version = 'b1.3.2';
+
 interface Name {
   language: Color;
   name: string;
@@ -19,11 +21,13 @@ const dateNow = Date.now() - (Date.now() % 86400000);
 const dataGet: {
   pokemonID: number;
   date: number;
+  level: number;
+  version: string;
 } = JSON.parse(localStorage.getItem('data') as string) || {
   date: 0,
 };
 const lastDay = dataGet.date;
-const difference = dateNow - lastDay >= 86400000;
+const difference = dateNow - lastDay >= 86400000 || dataGet.version != version;
 
 // HTML Element
 const hello = document.querySelector('#hello') as HTMLHeadingElement;
@@ -32,7 +36,7 @@ const footer = document.querySelector('.footer') as HTMLParagraphElement;
 const img = document.querySelector('img') as HTMLImageElement;
 const icon = document.querySelector('.icon') as HTMLLinkElement;
 
-const language = (Names: Name[]) => {
+const language = (Names: Name[], level: number) => {
   const matchName =
     Names.filter((lang) => lang.language.name == userLang)[0] != undefined
       ? Names.filter((lang) => lang.language.name == userLang)[0].name
@@ -44,27 +48,27 @@ const language = (Names: Name[]) => {
           ? 'Bonjour,'
           : 'Bonsoir,'
       }`,
-      you: `Vous êtes un.e ${matchName} aujourd'hui.`,
-      footer: `Créée avec <i class="fas fa-heart"></i> par <a href="https://diamant.dev" target="_blank" rel="noopener noreferrer">Diamant</a>. - <a id="tweet" href="https://twitter.com/intent/tweet?text=Today, Je suis un.e ${matchName}, et vous? Regardez ici:&hashtags=WhatPokemonAreYouToday,Pokemon&url=https://wpart.diams.app" target="_blank">Partager sur twitter.</a>`,
+      you: `Vous êtes un.e ${matchName} niveau ${level} aujourd'hui.`,
+      footer: `Créée avec <i class="fas fa-heart"></i> par <a href="https://diamant.dev" target="_blank" rel="noopener noreferrer">Diamant</a>. - <a id="tweet" href="https://twitter.com/intent/tweet?text=Today, Je suis un.e ${matchName} niveau ${level}, et vous? Regardez ici:&hashtags=WhatPokemonAreYouToday,Pokemon&url=https://wpart.diams.app" target="_blank">Partager sur twitter.</a>`,
     },
     en: {
       hello: `Hello,`,
-      you: `You are an ${matchName} today.`,
-      footer: `Made with <i class="fas fa-heart"></i> by <a href="https://diamant.dev" target="_blank" rel="noopener noreferrer">Diamant</a>. - <a id="tweet" href="https://twitter.com/intent/tweet?text=Today, I'm an ${matchName}, and you? Check here:&hashtags=WhatPokemonAreYouToday,Pokemon&url=https://wpart.diams.app" target="_blank">Share on twitter.</a>`,
+      you: `You are an ${matchName} lvl ${level} today.`,
+      footer: `Made with <i class="fas fa-heart"></i> by <a href="https://diamant.dev" target="_blank" rel="noopener noreferrer">Diamant</a>. - <a id="tweet" href="https://twitter.com/intent/tweet?text=Today, I'm an ${matchName} lvl ${level}, and you? Check here:&hashtags=WhatPokemonAreYouToday,Pokemon&url=https://wpart.diams.app" target="_blank">Share on twitter.</a>`,
     },
   };
   return language[userLang];
 };
 
 getData(difference, dataGet.pokemonID).then((data) => {
-  console.log(data);
-
   const send = {
     pokemonID: data.ID,
     date: difference ? dateNow : lastDay,
+    level: difference ? Math.round(Math.random() * 99 + 1) : dataGet.level,
+    version: version,
   };
   localStorage.setItem('data', JSON.stringify(send));
-  const languageText = language(data.Names);
+  const languageText = language(data.Names, send.level);
 
   img.alt = data.Name;
   img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.ImgID}.png`;
