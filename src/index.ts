@@ -67,12 +67,12 @@ getData(difference, dataGet.pokemonID).then((data) => {
   const languageText = language(data.Names);
 
   img.alt = data.Name;
-  img.src = `https://img.pokemondb.net/sprites/home/normal/${data.Name}.png`;
+  img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.ImgID}.png`;
   icon.href = img.src;
 
   hello.innerHTML = languageText.hello;
   you.innerHTML = languageText.you;
   footer.innerHTML = languageText.footer;
 
-  document.body.classList.add('ready');
+  document.body.classList.add('ready', data.Type as string);
 });

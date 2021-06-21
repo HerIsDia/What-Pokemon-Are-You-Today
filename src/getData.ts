@@ -15,6 +15,7 @@ export const getData = async (difference: boolean, pokemonID: number) => {
       ID,
       Names: PokeSpaces.names,
       Name: PokeSpaces.name,
+      ImgID: Poke.id,
     };
   } catch (error) {
     const PokeForm: Form = await P.getPokemonFormByName(Poke.forms[0].name);
@@ -22,6 +23,8 @@ export const getData = async (difference: boolean, pokemonID: number) => {
       ID,
       Names: PokeForm.names,
       Name: PokeForm.name,
+      ImgID: Poke.id,
+      Type: Poke.types[0].type.name,
     };
   }
 };
