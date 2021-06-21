@@ -1,7 +1,7 @@
 import { getData } from './getData';
 import { Color } from './Interfaces';
 
-const version = 'b1.3.2';
+const version = 'b1.3.2.1';
 
 interface Name {
   language: Color;
