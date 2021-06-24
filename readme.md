@@ -9,17 +9,17 @@ This little project have just a single utility: telling you what Pokemon you are
 
 ## Beta branch
 
-This is all the ideas for the next big update.
+This is all the official todoist for the 1.3
 
 - [x] Add a System Leveling.
 - [x] Add a update checker. (update values if there is a new update.)
-- [ ] Add an auto refresher and countdown.
 - [ ] Add a reveal animation. (and option for activate or desactivate it.)
 - [ ] Add an History.
-- [ ] Add a shiny rate.
 - [x] French Translation. (WIP - Still improvement to do)
 - [x] Better code.
-- [ ] PWA Support
+- [x] PWA Support.
+
+Note: you can access to the beta view with this link: https://beta.wpayt.diams.app/
 
 ## Authors
 
