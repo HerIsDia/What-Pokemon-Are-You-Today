@@ -2,7 +2,6 @@
   "name": "what-pokemon-you-are-today",
   "version": "1.0.1",
   "description": "This little project have just a single utility: telling you what Pokemon you are today !",
-  "main": "dist/index.html",
   "homepage": "https://wpayt.diams.app",
   "author": {
     "name": "DiamantDev",
