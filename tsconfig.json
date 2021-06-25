@@ -1,8 +1,9 @@
 {
-  "exclude": ["dist/*.*"],
+  "exclude": ["dist/*.*", "*.js"],
   "compilerOptions": {
     "strict": true,
     "module": "commonjs",
+    "checkJs": false,
     "jsx": "preserve",
     "esModuleInterop": true,
     "sourceMap": true,

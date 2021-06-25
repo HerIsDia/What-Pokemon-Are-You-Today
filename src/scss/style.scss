@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out,
+    background-color 1s ease-in-out;
+  opacity: 1;
+  transform: translateY(0px);
+  &:not(.ready) {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  .day {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    @media (max-width: 1000px) {
+      margin: 10vh 0;
+    }
+  }
+  h1 {
+    font-size: 4vw;
+  }
+  p {
+    font-size: 2vw;
+  }
+  i {
+    color: #b69cd9;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .footer {
+    margin-top: 10px;
+    font-size: 1vw;
+  }
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    text-align: center;
+    h1 {
+      font-size: 8vw;
+    }
+    p {
+      font-size: 4vw;
+    }
+    .footer {
+      margin-top: 10px;
+      font-size: 2vw;
+    }
+  }
+}
+
+.history {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  margin: 10px;
+  text-align: center;
+  overflow: hidden;
+
+  div {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    border: solid 0.5px black;
+    p {
+      font-size: 1vw;
+    }
+    span {
+      font-size: 0.5vw;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  @media (max-width: 1000px) {
+    text-align: left;
+    div {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      p {
+        font-size: 3vw;
+      }
+      span {
+        font-size: 1.5vw;
+      }
+    }
+  }
+}
+
+@import 'types';
+@import 'anim';
