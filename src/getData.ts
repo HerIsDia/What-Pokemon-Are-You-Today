@@ -4,9 +4,9 @@ var P = new Pokedex();
 import { AllPokes, Pokemon, Form, Spaces } from './Interfaces';
 
 export const getData = async (
-  difference: boolean,
   pokemonID: number,
-  online: boolean
+  difference: boolean = false,
+  online: boolean = true
 ) => {
   if (online) {
     const allPoke: AllPokes = await P.getPokemonsList();
@@ -19,6 +19,7 @@ export const getData = async (
       const PokeSpaces: Spaces = await P.getPokemonSpeciesByName(
         Poke.forms[0].name
       );
+
       return {
         ID,
         Names: PokeSpaces.names,
@@ -28,6 +29,7 @@ export const getData = async (
       };
     } catch (error) {
       const PokeForm: Form = await P.getPokemonFormByName(Poke.forms[0].name);
+
       return {
         ID,
         Names: PokeForm.names,

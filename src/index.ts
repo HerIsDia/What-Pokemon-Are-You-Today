@@ -1,7 +1,15 @@
 import { getData } from './getData';
+import { historyAdd, historyShowed } from './History';
 import { Color } from './Interfaces';
 
-const version = 'b1.3.2.1';
+export interface DataLS {
+  pokemonID: number;
+  date: number;
+  level: number;
+  version: string;
+}
+
+const version = 'b1.3.4.1';
 
 interface Name {
   language: Color;
@@ -18,12 +26,7 @@ const userLang: 'fr' | 'en' =
 
 // Date
 const dateNow = Date.now() - (Date.now() % 86400000);
-const dataGet: {
-  pokemonID: number;
-  date: number;
-  level: number;
-  version: string;
-} = JSON.parse(localStorage.getItem('data') as string) || {
+const dataGet: DataLS = JSON.parse(localStorage.getItem('data') as string) || {
   date: 0,
 };
 const lastDay = dataGet.date;
@@ -36,12 +39,15 @@ const you = document.querySelector('#you') as HTMLParagraphElement;
 const footer = document.querySelector('.footer') as HTMLParagraphElement;
 const img = document.querySelector('img') as HTMLImageElement;
 const icon = document.querySelector('.icon') as HTMLLinkElement;
+const day = document.querySelector('.day') as HTMLDivElement;
 
-const language = (Names: Name[], level: number) => {
+const language = (Names: Name[], level: number, Name: string) => {
   const matchName =
     Names.filter((lang) => lang.language.name == userLang)[0] != undefined
       ? Names.filter((lang) => lang.language.name == userLang)[0].name
-      : Names[0].name;
+      : Names[0] != undefined
+      ? Names[0].name
+      : Name;
   const language = {
     fr: {
       hello: `${
@@ -63,7 +69,8 @@ const language = (Names: Name[], level: number) => {
   return language[userLang];
 };
 
-getData(difference, dataGet.pokemonID, online).then((data) => {
+getData(dataGet.pokemonID, difference, online).then((data) => {
+  if (dataGet.date != 0 && difference) historyAdd(dataGet);
   localStorage.setItem('dataCache', JSON.stringify(data));
   const send = {
     pokemonID: data.ID,
@@ -72,20 +79,18 @@ getData(difference, dataGet.pokemonID, online).then((data) => {
     version: version,
   };
   localStorage.setItem('data', JSON.stringify(send));
-  const languageText = language(data.Names, send.level);
+  const languageText = language(data.Names, send.level, data.Name);
 
   img.alt = data.Name;
   img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.ImgID}.png`;
-  icon.href = img.src;
 
   hello.innerHTML = languageText.hello;
   you.innerHTML = languageText.you;
   footer.innerHTML = online ? languageText.footer : languageText.Offfooter;
+  historyShowed(userLang);
 
   document.body.classList.add('ready', data.Type as string);
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('../sw.js');
+  }
 });
-
-// PWA
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('../sw.js');
-}

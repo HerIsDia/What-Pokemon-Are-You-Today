@@ -1,24 +1,36 @@
 <html>
   <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="manifest" href="./manifest.webmanifest" id="manifest">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="manifest" href="./manifest.webmanifest" id="manifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>What Pokémon are you today ?</title>
-    <meta name="title" content="What Pokémon are you today ?">
-    <meta name="description" content="Discover what Pokemon you are today.">
-      
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://wpayt.diams.app">
-    <meta property="og:title" content="What Pokémon are you today ?">
-    <meta property="og:description" content="Discover what Pokemon you are today.">
-    <meta property="og:image" content="./src/card.png">
-      
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://wpayt.diams.app">
-    <meta property="twitter:title" content="What Pokémon are you today ?">
-    <meta property="twitter:description" content="Discover what Pokemon you are today.">
-    <meta property="twitter:image" content="./src/card.png">
+    <meta name="title" content="What Pokémon are you today ?" />
+    <meta name="description" content="Discover what Pokemon you are today." />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wpayt.diams.app" />
+    <meta property="og:title" content="What Pokémon are you today ?" />
+    <meta
+      property="og:description"
+      content="Discover what Pokemon you are today."
+    />
+    <meta property="og:image" content="./src/card.png" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://wpayt.diams.app" />
+    <meta property="twitter:title" content="What Pokémon are you today ?" />
+    <meta
+      property="twitter:description"
+      content="Discover what Pokemon you are today."
+    />
+    <meta property="twitter:image" content="./src/card.png" />
 
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="src/style.scss" />
@@ -32,14 +44,15 @@
   </head>
 
   <body>
-    <div>
-      <h1 id="hello"></h1>
-      <p id="you"></p>
-      <p class="footer"></p>
+    <div class="day">
+      <div>
+        <h1 id="hello"></h1>
+        <p id="you"></p>
+        <p class="footer"></p>
       </div>
+      <div><img id="sprite" src="#" alt="" crossorigin="anonymous" /></div>
     </div>
-    <div><img id="sprite" src="#" alt="" crossorigin="anonymous" /></div>
-
+    <div class="history"></div>
     <script src="src/index.ts"></script>
   </body>
 </html>

@@ -13,8 +13,8 @@ This is all the official todoist for the 1.3
 
 - [x] Add a System Leveling.
 - [x] Add a update checker. (update values if there is a new update.)
-- [ ] Add a reveal animation. (and option for activate or desactivate it.)
-- [ ] Add an History.
+- [ ] Add a reveal animation.
+- [x] Add an History.
 - [x] French Translation. (WIP - Still improvement to do)
 - [x] Better code.
 - [x] PWA Support.
