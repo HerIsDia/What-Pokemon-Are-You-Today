@@ -1,0 +1,31 @@
+.reveal {
+  &#you {
+    filter: blur(10px);
+    animation: textReveal 1.5s ease-in-out 5s 1 forwards;
+  }
+  &#sprite {
+    filter: blur(10px);
+    filter: brightness(0);
+    animation: imgReveal 5s ease-in-out 3s 1 forwards;
+  }
+}
+
+@keyframes textReveal {
+  0% {
+    filter: blur(10px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+@keyframes imgReveal {
+  0% {
+    filter: blur(10px);
+    filter: brightness(0);
+  }
+  100% {
+    filter: blur(0px);
+    filter: brightness(1);
+  }
+}

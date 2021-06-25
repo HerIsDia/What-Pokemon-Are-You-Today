@@ -9,7 +9,7 @@ export interface DataLS {
   version: string;
 }
 
-const version = 'b1.3.4.1';
+const version = '1.3';
 
 interface Name {
   language: Color;
@@ -89,8 +89,13 @@ getData(dataGet.pokemonID, difference, online).then((data) => {
   footer.innerHTML = online ? languageText.footer : languageText.Offfooter;
   historyShowed(userLang);
 
+  if (difference) {
+    you.classList.add('reveal');
+    img.classList.add('reveal');
+  }
+
   document.body.classList.add('ready', data.Type as string);
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('../sw.js');
+    navigator.serviceWorker.register('../../sw.js');
   }
 });
