@@ -1,6 +1,7 @@
 # What Pokemon Are You Today !
 
-This little project have just a single utility: telling you what Pokemon you are today !
+This little project have just a single utility: telling you what Pokemon you are
+today !
 
 <a href="https://github.com/diamantdotdev/What-Pokemon-Are-You-Today/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/diamantdotdev/What-Pokemon-Are-You-Today?logo=github&style=flat-square"></a>
 <a href="https://github.com/diamantdotdev/What-Pokemon-Are-You-Today/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/diamantdotdev/What-Pokemon-Are-You-Today?logo=github&style=flat-square"></a>
