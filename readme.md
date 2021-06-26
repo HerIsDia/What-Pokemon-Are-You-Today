@@ -3,9 +3,9 @@
 This little project have just a single utility: telling you what Pokemon you are
 today !
 
-<a href="https://github.com/diamantdotdev/What-Pokemon-Are-You-Today/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/diamantdotdev/What-Pokemon-Are-You-Today?logo=github&style=flat-square"></a>
-<a href="https://github.com/diamantdotdev/What-Pokemon-Are-You-Today/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/diamantdotdev/What-Pokemon-Are-You-Today?logo=github&style=flat-square"></a>
-<a href="https://github.com/diamantdotdev/What-Pokemon-Are-You-Today/blob/master/LICENCE"><img alt="GitHub license" src="https://img.shields.io/github/license/diamantdotdev/What-Pokemon-Are-You-Today?style=flat-square"></a>
+<a href="https://github.com/diamantdotdev/What-Pokemon-Are-You-Today/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/diamantdev/What-Pokemon-Are-You-Today?logo=github&style=flat-square"></a>
+<a href="https://github.com/diamantdotdev/What-Pokemon-Are-You-Today/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/diamantdev/What-Pokemon-Are-You-Today?logo=github&style=flat-square"></a>
+<a href="https://github.com/diamantdotdev/What-Pokemon-Are-You-Today/blob/master/LICENCE"><img alt="GitHub license" src="https://img.shields.io/github/license/diamantdev/What-Pokemon-Are-You-Today?style=flat-square"></a>
 <img alt="Website" src="https://img.shields.io/website?down_color=red&down_message=offline&style=flat-square&up_color=green&up_message=online&url=https%3A%2F%2Fwpayt.diams.app">
 
 ## Authors
