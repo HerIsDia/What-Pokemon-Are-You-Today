@@ -1,4 +1,4 @@
-import { DataLS } from '.';
+import { DataLS, Event, historyDOM, userLang } from '.';
 import { getData } from './getData';
 import { Color } from './Interfaces';
 interface Name {
@@ -6,48 +6,41 @@ interface Name {
   name: string;
 }
 
-const history =
-  (JSON.parse(localStorage.getItem('history') as string) as [DataLS]) || [];
-const historyDOM = document.querySelector('.history') as HTMLDivElement;
+export const history = (JSON.parse(
+  localStorage.getItem('event') as string
+) as Event) || { done: false, pokemon: [] };
 
-export const historyAdd = (data: DataLS) => {
-  history.push(data);
-  localStorage.setItem('history', JSON.stringify(history));
+export const historyAdd = (data: DataLS, lvl: number, datapk: any) => {
+  history.pokemon.push(data);
+  setDiv(datapk, lvl);
+  localStorage.setItem('event', JSON.stringify(history));
 };
 
-export const historyShowed = (userLang: string) => {
-  if (history[0] != undefined) {
-    const his = history.reverse();
-    his.forEach((poke, i) => {
-      if (i > 6) return;
-      getData(poke.pokemonID).then((data) => {
-        const matchName =
-          data.Names.filter(
-            (lang: Name) => lang.language.name == userLang
-          )[0] != undefined
-            ? data.Names.filter(
-                (lang: Name) => lang.language.name == userLang
-              )[0].name
-            : data.Names[0] != undefined
-            ? data.Names[0].name
-            : data.Name;
+export const historyShowed = () => {
+  history.pokemon.forEach((poke) => {
+    getData(poke.pokemonID).then((data) => {
+      setDiv(data, poke.level);
+    });
+  });
+};
 
-        const dateSet = new Date(poke.date);
-        const div = document.createElement('div');
-        div.className = data.Type;
-        div.innerHTML = `<img
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-                data.ImgID
-              }.png"
+const setDiv = (data: any, lvl: number) => {
+  const matchName =
+    data.Names.filter((lang: Name) => lang.language.name == userLang)[0] !=
+    undefined
+      ? data.Names.filter((lang: Name) => lang.language.name == userLang)[0]
+          .name
+      : data.Names[0] != undefined
+      ? data.Names[0].name
+      : data.Name;
+  const div = document.createElement('div');
+  div.className = data.Type;
+  div.innerHTML = `<img
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.ImgID}.png"
               alt="${data.Name}"
               crossorigin="anonymous"
             />
-            <p>${matchName} (${poke.level})<br />
-            <span>${dateSet.toLocaleDateString()}</span></p>`;
-        historyDOM.appendChild(div);
-      });
-    });
-  } else {
-    document.body.removeChild(historyDOM);
-  }
+            <p>${matchName}<br />
+            <span>Level ${lvl}.</span></p>`;
+  historyDOM.appendChild(div);
 };

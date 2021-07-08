@@ -28,6 +28,7 @@ body {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    text-align: center;
     flex-wrap: wrap;
     @media (max-width: 1000px) {
       margin: 10vh 0;
