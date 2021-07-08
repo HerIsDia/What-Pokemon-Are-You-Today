@@ -64,6 +64,3 @@ if (!history.done) {
 }
 
 document.body.classList.add('ready');
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('../../sw.js');
-}
