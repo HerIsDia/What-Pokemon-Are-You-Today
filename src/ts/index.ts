@@ -50,11 +50,11 @@ const language = (Names: Name[], level: number, Name: string) => {
       : Name;
   // Detect if matchName start with a vowel
   const matchNameVowel =
-    matchName.slice(0, 1) == 'a' ||
-    matchName.slice(0, 1) == 'e' ||
-    matchName.slice(0, 1) == 'i' ||
-    matchName.slice(0, 1) == 'o' ||
-    matchName.slice(0, 1) == 'u';
+    matchName.slice(0, 1).toLowerCase() == 'a' ||
+    matchName.slice(0, 1).toLowerCase() == 'e' ||
+    matchName.slice(0, 1).toLowerCase() == 'i' ||
+    matchName.slice(0, 1).toLowerCase() == 'o' ||
+    matchName.slice(0, 1).toLowerCase() == 'u';
   const language = {
     fr: {
       hello: `${
@@ -68,7 +68,9 @@ const language = (Names: Name[], level: number, Name: string) => {
     },
     en: {
       hello: `Hello,`,
-      you: `You are an ${matchName} lvl ${level} today.`,
+      you: `You are I'm ${
+        matchNameVowel ? 'an' : 'a'
+      } ${matchName} lvl ${level} today.`,
       footer: `Made with <i class="fas fa-heart"></i> by <a href="https://diamant.dev" target="_blank" rel="noopener noreferrer">Diamant</a>. - <a id="tweet" href="https://twitter.com/intent/tweet?text=Today, I'm ${
         matchNameVowel ? 'an' : 'a'
       } ${matchName} lvl ${level}, and you? Check here:&hashtags=WhatPokemonAreYouToday,Pokemon&url=https://wpart.diams.app" target="_blank">Share on twitter.</a>`,
