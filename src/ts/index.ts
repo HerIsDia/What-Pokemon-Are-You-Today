@@ -9,7 +9,7 @@ export interface DataLS {
   version: string;
 }
 
-const version = '1.3';
+const version = '1.3.1';
 
 interface Name {
   language: Color;
@@ -48,6 +48,13 @@ const language = (Names: Name[], level: number, Name: string) => {
       : Names[0] != undefined
       ? Names[0].name
       : Name;
+  // Detect if matchName start with a vowel
+  const matchNameVowel =
+    matchName.slice(0, 1) == 'a' ||
+    matchName.slice(0, 1) == 'e' ||
+    matchName.slice(0, 1) == 'i' ||
+    matchName.slice(0, 1) == 'o' ||
+    matchName.slice(0, 1) == 'u';
   const language = {
     fr: {
       hello: `${
@@ -62,7 +69,9 @@ const language = (Names: Name[], level: number, Name: string) => {
     en: {
       hello: `Hello,`,
       you: `You are an ${matchName} lvl ${level} today.`,
-      footer: `Made with <i class="fas fa-heart"></i> by <a href="https://diamant.dev" target="_blank" rel="noopener noreferrer">Diamant</a>. - <a id="tweet" href="https://twitter.com/intent/tweet?text=Today, I'm an ${matchName} lvl ${level}, and you? Check here:&hashtags=WhatPokemonAreYouToday,Pokemon&url=https://wpart.diams.app" target="_blank">Share on twitter.</a>`,
+      footer: `Made with <i class="fas fa-heart"></i> by <a href="https://diamant.dev" target="_blank" rel="noopener noreferrer">Diamant</a>. - <a id="tweet" href="https://twitter.com/intent/tweet?text=Today, I'm ${
+        matchNameVowel ? 'an' : 'a'
+      } ${matchName} lvl ${level}, and you? Check here:&hashtags=WhatPokemonAreYouToday,Pokemon&url=https://wpart.diams.app" target="_blank">Share on twitter.</a>`,
       Offfooter: `Made with <i class="fas fa-heart"></i> by Diamant. - Offline mode.`,
     },
   };
